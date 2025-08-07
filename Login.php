@@ -1,3 +1,29 @@
+<?php
+require_once('db.php');
+session_start();
+
+$message = '';
+if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+    $username = $_POST['username'];
+    $password = $_POST['password'];
+    
+    // Check database
+    $stmt = $pdo->prepare("SELECT * FROM users WHERE username = ? AND password = ?");
+    $stmt->execute([$username, $password]);
+    $user = $stmt->fetch();
+    
+    if ($user) {
+        // Login success - set session and go to quizzes
+        $_SESSION['username'] = $user['username'];
+        $_SESSION['email'] = $user['email'];
+        
+        header('Location: Quiz_list.php');
+        exit();
+    } else {
+        $message = '<div class="error-message">Wrong username or password!</div>';
+    }
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -117,22 +143,8 @@
             <form class="login-form" method="POST" action="Login.php">
                 <h2>Login</h2>
                 
-                <?php
-                // Simple login check
-                if (isset($_POST['login'])) {
-                    $username = $_POST['username'];
-                    $password = $_POST['password'];
-                    
-                    // Simple hardcoded login for beginners
-                    if ($username === "admin" && $password === "password") {
-                        header("Location: Quiz_list.php");
-                        exit();
-                    } else {
-                        echo '<div class="error-message">Invalid username or password!</div>';
-                    }
-                }
-                ?>
-
+                <?php echo $message; ?>
+                
                 <div class="form-group">
                     <label for="username">Username:</label>
                     <input type="text" id="username" name="username" required>

@@ -1,0 +1,19 @@
+-- STEP 1: CREATE DATABASE
+CREATE DATABASE IF NOT EXISTS brainboosters;
+
+-- STEP 2: USE THE DATABASE
+USE brainboosters;
+
+-- STEP 3: CREATE USERS TABLE
+CREATE TABLE IF NOT EXISTS users (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    username VARCHAR(50) UNIQUE NOT NULL,
+    email VARCHAR(100) NOT NULL,
+    password VARCHAR(100) NOT NULL
+);
+
+-- STEP 4: INSERT TEST USER
+INSERT IGNORE INTO users (username, email, password) VALUES ('admin', 'admin@test.com', 'password');
+
+-- STEP 5: SHOW WHAT WE CREATED
+SELECT * FROM users;

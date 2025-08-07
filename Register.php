@@ -1,3 +1,31 @@
+<?php
+require_once('db.php');
+session_start();
+
+$message = '';
+if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['register'])) {
+    $username = $_POST['username'];
+    $email = $_POST['email'];
+    $password = $_POST['password'];
+    
+    // Store in database
+    try {
+        $stmt = $pdo->prepare("INSERT INTO users (username, email, password) VALUES (?, ?, ?)");
+        $stmt->execute([$username, $email, $password]);
+        
+        // Auto-login after registration
+        $_SESSION['username'] = $username;
+        $_SESSION['email'] = $email;
+        
+        // Redirect to Quiz_list.php
+        header('Location: Quiz_list.php');
+        exit();
+        
+    } catch(Exception $e) {
+        $message = '<div class="error-message">Username already exists!</div>';
+    }
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -128,12 +156,7 @@
             <form id="registerForm" class="register-form" method="POST" action="Register.php">
                 <h2>Create Account</h2>
                 
-                <?php
-                // Simple registration
-                if (isset($_POST['register'])) {
-                    echo '<div class="success-message">Account created successfully! You can now <a href="Login.php">login</a> with username: admin and password: password</div>';
-                }
-                ?>
+                <?php echo $message; ?>
 
                 <!-- Error message div for JavaScript -->
                 <div id="error-message" class="error-message" style="display: none;"></div>
