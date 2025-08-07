@@ -19,7 +19,7 @@
     <section class="hero">
       <h2>Test Your Knowledge!</h2>
       <p>Take quizzes and challenge yourself!</p>
-      <a href="#get-started" class="btn">Get Started</a>
+      <a href="Login.php" class="btn">Get Started</a>
       <img src="Img/Quiz.jpg" alt="Quiz illustration" class="hero-image">
     </section>
   </main>
