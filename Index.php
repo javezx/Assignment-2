@@ -20,6 +20,7 @@
       <h2>Test Your Knowledge!</h2>
       <p>Take quizzes and challenge yourself!</p>
       <a href="#get-started" class="btn">Get Started</a>
+      <img src="Img/Quiz.jpg" alt="Quiz illustration" class="hero-image">
     </section>
   </main>
 
