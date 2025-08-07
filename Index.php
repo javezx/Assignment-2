@@ -3,7 +3,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Quiz Master</title>
+  <title>BrainBooster</title>
   <link rel="stylesheet" href="CSS/style.css">
   <script src="Javascript/script.js"></script>
 </head>
@@ -11,7 +11,7 @@
   <header>
     <h1>BrainBooster</h1>
     <nav>
-      <a href="#login">Login</a>
+      <a href="Login.php">Login</a>
     </nav>
   </header>
 
