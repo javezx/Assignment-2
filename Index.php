@@ -4,28 +4,27 @@
 <head>
   <meta charset="UTF-8">
   <title>Quiz Master</title>
-  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="CSS/style.css">
+  <script src="Javascript/script.js"></script>
 </head>
 <body>
   <header>
-    <h1>Quiz Master</h1>
+    <h1>BrainBooster</h1>
     <nav>
-      <a href="pages/register.php">Register</a>
-      <a href="pages/login.php">Login</a>
-      <a href="pages/quiz_list.php">Quizzes</a>
+      <a href="#login">Login</a>
     </nav>
   </header>
 
   <main>
     <section class="hero">
       <h2>Test Your Knowledge!</h2>
-      <p>Take quizzes, challenge yourself, and track your progress.</p>
-      <a href="pages/quiz_list.php" class="btn">Get Started</a>
+      <p>Take quizzes and challenge yourself!</p>
+      <a href="#get-started" class="btn">Get Started</a>
     </section>
   </main>
 
   <footer>
-    <p>&copy; 2025 Quiz Master | Developed by Harmanpreet Singh</p>
+    <p>&copy; 2025 BrainBooster</p>
   </footer>
 </body>
 </html>
