@@ -1,22 +1,4 @@
-// BrainBooster JavaScript - Simple validation and dynamic behavior
-
-// Form Validation 
-function validateForm() {
-    const email = document.querySelector('input[type="email"]');
-    const password = document.querySelector('input[type="password"]');
-    
-    if (email && !email.value.includes('@')) {
-        alert('Please enter a valid email');
-        return false;
-    }
-    
-    if (password && password.value.length < 6) {
-        alert('Password must be at least 6 characters');
-        return false;
-    }
-    
-    return true;
-}
+// BrainBooster JavaScript - Quiz functionality and dynamic behavior
 
 // Quiz Functions
 function checkAnswers() {

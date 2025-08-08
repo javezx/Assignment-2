@@ -32,21 +32,6 @@
             font-weight: bold;
         }
 
-        .answer-input {
-            font-size: 2rem;
-            padding: 1rem;
-            border: 3px solid #e2e8f0;
-            border-radius: 8px;
-            text-align: center;
-            width: 150px;
-            margin: 1rem;
-        }
-
-        .answer-input:focus {
-            outline: none;
-            border-color: #4299e1;
-        }
-
         .choice-container {
             display: flex;
             flex-direction: column;
